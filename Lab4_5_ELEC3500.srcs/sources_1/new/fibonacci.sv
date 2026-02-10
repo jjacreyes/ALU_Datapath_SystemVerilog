@@ -19,7 +19,6 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module fibonacci #(parameter WIDTH = 11)
     (
         input logic clk, rst,
@@ -37,12 +36,12 @@ module fibonacci #(parameter WIDTH = 11)
         .rst(rst),
         .step(step),
         .mode(mode),
-        .GT(greater_than),
-        .r1_ld_out(r1_ld),
-        .r2_ld_out(r2_ld),
-        .r3_ld_out(r3_ld),
-        .m1_sel_out(m1_sel),
-        .m2_sel_out(m2_sel)
+        .greater_than(GT),
+        .r1_ld(r1_ld_out),
+        .r2_ld(r2_ld_out),
+        .r3_ld(r3_ld_out),
+        .m1_sel(m1_sel_out),
+        .m2_sel(m2_sel_out)
     );
 
     // Datapath
@@ -50,15 +49,14 @@ module fibonacci #(parameter WIDTH = 11)
     (
         .clk(clk),
         .rst(rst),
-        .m1_sel_out(m1_sel),
-        .m2_sel_out(m2_sel),
-        .r1_ld_out(r1_ld),
-        .r2_ld_out(r2_ld),
-        .r3_ld_out(r3_ld),
+        .m1_sel(m1_sel_out),
+        .m2_sel(m2_sel_out),
+        .r1_ld(r1_ld_out),
+        .r2_ld(r2_ld_out),
+        .r3_ld(r3_ld_out),
         .GT(gt),
         .o_fibonacci(fib_out)
     );
-
 
 
 endmodule
