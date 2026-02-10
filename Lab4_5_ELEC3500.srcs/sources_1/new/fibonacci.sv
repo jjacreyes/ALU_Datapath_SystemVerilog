@@ -24,7 +24,7 @@ module fibonacci #(parameter WIDTH = 11)
         input logic clk, rst,
         input logic step, mode,
         output wire GT,
-        output logic o_fibonacci
+        output logic [WIDTH-1:0]o_fibonacci //10 bit output 
     );
 
     wire m1_sel_out, m2_sel_out;

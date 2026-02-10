@@ -20,7 +20,27 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module fibonacci_tb(
+module fibonacci_tb();
+    parameter WIDTH = 11;
 
-    );
+    logic clk;
+    logic rst; 
+    logic step;
+    logic mode;
+    logic GT;
+    logic [WIDTH-1:0] o_fibonacci;
+
+
+    fibonacci dut(
+        .clk(clk),
+        .rst(rst),
+        .step(step),
+        .mode(mode),
+        .GT(GT),
+        .o_fibonacci(o_fibonacci)
+
+
+    )
+
+
 endmodule
