@@ -27,6 +27,7 @@ module adder #(parameter WIDTH = 11)
         output logic [WIDTH-1:0] sum,
         output logic overflow //  Overflow logic for sum > 1000
     );
+    logic [WIDTH:0] temp_sum;
 
     assign temp_sum = A + B;
     assign sum = temp_sum[WIDTH-1:0]; // first 11 bits
