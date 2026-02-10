@@ -19,18 +19,18 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module datapath #(parameter WIDTH = 11)
+module datapath #(parameter WIDTH = 10)
     (
         input logic clk, rst,
         input logic m1_sel, m2_sel,
         input logic r1_load, r2_load, r3_load,
         output logic gt,
-        output logic [WIDTH-1:0] fib_out
+        output logic [WIDTH:0] fib_out
     );
 
-    logic [WIDTH-1:0] m1_out, m2_out;
-    logic [WIDTH-1:0] r1, r2, r3;
-    logic [WIDTH-1:0] sum;
+    logic [WIDTH:0] m1_out, m2_out;
+    logic [WIDTH:0] r1, r2, r3;
+    logic [WIDTH:0] sum;
     logic overflow;
 
 
@@ -89,7 +89,7 @@ module datapath #(parameter WIDTH = 11)
         end
         else if (r3_load) begin
             r3 <= sum;
-            fib_out <= r3;
+            fib_out <= sum;
         end
     end
 

@@ -95,20 +95,26 @@ module controller_fsm(
                 S_INIT: begin
                     m1_sel = 1'b0;
                     m2_sel = 1'b0;
-                    r1_ld = 1'b0;
-                    r2_ld = 1'b0;
+                    r1_ld = 1'b1;
+                    r2_ld = 1'b1;
                 end
                 S_WAIT: begin
+                    m1_sel = 1'b1;
+                    m2_sel = 1'b1;
                     r1_ld = 1'b0;
                     r2_ld = 1'b0;
                 end 
                 S_CHECK: begin
+                    m1_sel = 1'b1;
+                    m2_sel = 1'b1;
                     r1_ld = 1'b0;
                     r2_ld = 1'b0;
                 end 
                 S_ADD: begin
-                    r1_ld = 1'b0;
-                    r2_ld = 1'b0;
+                    m1_sel = 1'b1;
+                    m2_sel = 1'b1;
+                    r1_ld = 1'b1;
+                    r2_ld = 1'b1;
                     r3_ld = 1'b1;
                 end
                 S_UPDATE: begin
@@ -116,12 +122,14 @@ module controller_fsm(
                     m2_sel = 1'b1;
                     r1_ld= 1'b1;
                     r2_ld= 1'b1;
-                    r3_ld = 1'b0;
+                    r3_ld = 1'b1;
                 end
                 S_MODE_CHECK: begin
+                    m1_sel = 1'b1;
+                    m2_sel = 1'b1;
                     r1_ld = 1'b0;
                     r2_ld = 1'b0;
-                    r3_ld = 0;
+                    r3_ld = 1'b0;
                 end
                 S_DONE: begin  
                     r1_ld = 1'b0;
@@ -130,7 +138,6 @@ module controller_fsm(
                 end
                 endcase 
         end
-        
-                
+                       
             
 endmodule

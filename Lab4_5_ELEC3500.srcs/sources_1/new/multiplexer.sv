@@ -19,11 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module multiplexer(
-    input wire in_0,
-    input wire in_1,
+module multiplexer #(parameter WIDTH = 10)
+(
+    input wire [WIDTH:0] in_0,
+    input wire [WIDTH:0] in_1,
     input wire sel,
-    output logic mux_out
+    output logic [WIDTH:0] mux_out
 );
 
 always_ff @ (*) begin

@@ -19,15 +19,14 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module fibonacci #(parameter WIDTH = 11)
+module fibonacci #(parameter WIDTH = 10)
     (
         input logic clk, rst,
         input logic step, mode,
-        output logic [WIDTH-1:0]o_fibonacci //10 bit output 
+        output logic gt,
+        output logic [WIDTH-1:0]o_fibonacci //10 bit output
     );
 
-
-    logic GT;
     wire m1_sel_out, m2_sel_out;
     wire r1_ld_out, r2_ld_out, r3_ld_out;
 

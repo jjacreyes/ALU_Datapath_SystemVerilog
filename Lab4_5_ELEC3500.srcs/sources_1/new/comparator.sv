@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module comparator #(parameter WIDTH = 11, parameter COMPARED_VALUE = 11'd1000)
+module comparator #(parameter WIDTH = 10, parameter COMPARED_VALUE = 11'd1000)
     (
-        input logic [WIDTH-1:0] comp_in,
+        input logic [WIDTH:0] comp_in,
         output logic is_greater
     );
     

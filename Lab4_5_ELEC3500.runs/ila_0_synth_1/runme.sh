@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/Lab4_5_ELEC3500.runs/ila_0_synth_1'
+HD_PWD='W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.runs/ila_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

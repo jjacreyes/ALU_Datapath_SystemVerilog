@@ -1,16 +1,22 @@
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot adder_tb_behav xil_defaultlib.adder_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fibonacci_tb_behav xil_defaultlib.fibonacci_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3823] variable 'sum' might have multiple concurrent drivers [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sim_1/new/adder_tb.sv:43]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 11 for port 'fib_out' [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sources_1/new/fibonacci.sv:58]
+WARNING: [VRFC 10-3823] variable 'o_fibonacci' might have multiple concurrent drivers [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sim_1/new/fibonacci_tb.sv:44]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.controller_fsm
+Compiling module xil_defaultlib.multiplexer
 Compiling module xil_defaultlib.adder
-Compiling module xil_defaultlib.adder_tb
+Compiling module xil_defaultlib.comparator
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.fibonacci
+Compiling module xil_defaultlib.fibonacci_tb
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot adder_tb_behav
+Built simulation snapshot fibonacci_tb_behav

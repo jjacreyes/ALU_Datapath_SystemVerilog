@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<wave_config>
+	<wave_state>
+	</wave_state>
+	<db_ref_list>
+		<db_ref path="W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1" type="auto">
+			<top_modules>
+				<top_module name="top">
+				</top_module>
+			</top_modules>
+		</db_ref>
+	</db_ref_list>
+	<WVObjectSize size="4">
+	</WVObjectSize>
+	<wvobject fp_name="step" type="logic" db_ref_id="1">
+		<obj_property name="ElementShortName">step</obj_property>
+		<obj_property name="ObjectShortName">step</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">HEXRADIX</obj_property>
+	</wvobject>
+	<wvobject fp_name="mode" type="logic" db_ref_id="1">
+		<obj_property name="ElementShortName">mode</obj_property>
+		<obj_property name="ObjectShortName">mode</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">HEXRADIX</obj_property>
+	</wvobject>
+	<wvobject fp_name="rst" type="logic" db_ref_id="1">
+		<obj_property name="ElementShortName">rst</obj_property>
+		<obj_property name="ObjectShortName">rst</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">HEXRADIX</obj_property>
+	</wvobject>
+	<wvobject fp_name="o_fibonacci_OBUF" type="array" db_ref_id="1">
+		<obj_property name="ElementShortName">o_fibonacci_OBUF[0:0]</obj_property>
+		<obj_property name="ObjectShortName">o_fibonacci_OBUF[0:0]</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">HEXRADIX</obj_property>
+	</wvobject>
+</wave_config>
+
