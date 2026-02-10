@@ -30,7 +30,7 @@ module adder #(parameter WIDTH = 11)
     logic [WIDTH:0] temp_sum;
 
     assign temp_sum = A + B;
-    assign sum = temp_sum[WIDTH-1:0]; // first 11 bits
-    assign overflow = temp_sum[WIDTH]; // looks for 12th bit for overflow --> WILL BE USED TO STOP IF 1!!!!
+    assign sum = temp_sum[WIDTH-2:0]; // first 10 bits
+    assign overflow = temp_sum[WIDTH-1]; // looks for 11th bit for overflow --> WILL BE USED TO STOP IF 1!!!!
 
 endmodule

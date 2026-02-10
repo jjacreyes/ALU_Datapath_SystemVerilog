@@ -23,10 +23,11 @@ module fibonacci #(parameter WIDTH = 11)
     (
         input logic clk, rst,
         input logic step, mode,
-        output wire GT,
         output logic [WIDTH-1:0]o_fibonacci //10 bit output 
     );
 
+
+    logic GT;
     wire m1_sel_out, m2_sel_out;
     wire r1_ld_out, r2_ld_out, r3_ld_out;
 
@@ -51,11 +52,11 @@ module fibonacci #(parameter WIDTH = 11)
         .rst(rst),
         .m1_sel(m1_sel_out),
         .m2_sel(m2_sel_out),
-        .r1_ld(r1_ld_out),
-        .r2_ld(r2_ld_out),
-        .r3_ld(r3_ld_out),
-        .GT(gt),
-        .o_fibonacci(fib_out)
+        .r1_load(r1_ld_out),
+        .r2_load(r2_ld_out),
+        .r3_load(r3_ld_out),
+        .gt(GT),
+        .fib_out(o_fibonacci)
     );
 
 

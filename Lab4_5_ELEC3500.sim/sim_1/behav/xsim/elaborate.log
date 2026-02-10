@@ -1,15 +1,16 @@
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fibonacci_tb_behav xil_defaultlib.fibonacci_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot adder_tb_behav xil_defaultlib.adder_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-2861] module 'multiplexer' does not have a parameter named WIDTH [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sources_1/new/datapath.sv:38]
-WARNING: [VRFC 10-2861] module 'multiplexer' does not have a parameter named WIDTH [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sources_1/new/datapath.sv:46]
-ERROR: [VRFC 10-3180] cannot find port 'o_fibonacci' on this module [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sources_1/new/fibonacci.sv:58]
-ERROR: [VRFC 10-3180] cannot find port 'GT' on this module [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sources_1/new/fibonacci.sv:57]
-ERROR: [VRFC 10-3180] cannot find port 'r3_ld' on this module [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sources_1/new/fibonacci.sv:56]
-ERROR: [VRFC 10-3180] cannot find port 'r2_ld' on this module [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sources_1/new/fibonacci.sv:55]
-ERROR: [VRFC 10-3180] cannot find port 'r1_ld' on this module [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sources_1/new/fibonacci.sv:54]
-ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+WARNING: [VRFC 10-3823] variable 'sum' might have multiple concurrent drivers [W:/Desktop/SystemVerilogLabs/Lab4_5_ELEC3500/ALU_Datapath_SystemVerilog/Lab4_5_ELEC3500.srcs/sim_1/new/adder_tb.sv:43]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.adder_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot adder_tb_behav

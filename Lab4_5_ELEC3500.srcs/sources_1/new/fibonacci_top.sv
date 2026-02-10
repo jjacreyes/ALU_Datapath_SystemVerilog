@@ -61,22 +61,22 @@ module fibonacci_top #(parameter FIB_WIDTH = 10)
 
     // TODO: Instantiate your fibonacci core here (example shown)
     // Use signals clk, rst, step, mode, o_fibonacci
-    fibonacci #(
-        .W(FIB_WIDTH)
-    ) fib_core (
-        .clk(clk),
-        .rst(rst),
-        // etc
-    );
+    fibonacci #(.W(FIB_WIDTH) fib_core
+        (
+            .clk(i_sys_clk),
+            .rst(i_sys_rst),
+            .step(i_step),
+            .mode(i_mode),
+            .o_fibonacci(o_fibonacci)
+        );
 
     // TODO: Connect ILA probes to signals (example shown)
     ila_0 ila_inst (
         .clk(clk),
-        .probe0(step),
-        .probe1(mode),
-        .probe2(),
-        .probe3(),
-        // etc
+        .step(step),
+        .mode(mode),
+        .rst(rst),
+        .o_fibonacci(o_fibonacci),
     );
 
 

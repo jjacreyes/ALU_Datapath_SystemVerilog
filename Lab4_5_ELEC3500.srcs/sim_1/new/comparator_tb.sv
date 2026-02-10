@@ -21,10 +21,9 @@
 
 
 module comparator_tb();
-
-    parameter CLOCK_PERIOD = 10; // 10ns for 100MHz clk
     parameter WIDTH = 11;
 
+    logic clk;
     logic [WIDTH-1:0] comp_in;
     logic is_greater_output;
 
@@ -32,8 +31,12 @@ module comparator_tb();
         .comp_in(comp_in),
         .is_greater(is_greater_output)
     );
+    
+    always #10 clk = ~clk;
 
     initial begin
+        clk = 0;
+        
         comp_in = 11'd500;
         #20;
         comp_in = 11'd1000;
@@ -42,7 +45,5 @@ module comparator_tb();
         #20;
         comp_in = 11'd200;
     end
-
-
 
 endmodule

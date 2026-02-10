@@ -37,18 +37,18 @@ module datapath #(parameter WIDTH = 11)
     // Multiplexers
     multiplexer #(.WIDTH(WIDTH)) M1 
     (
-        .in0(11'b0), // F(0) = 0
-        .in1(r2),
+        .in_0(11'b0), // F(0) = 0
+        .in_1(r2),
         .sel(m1_sel),
-        .out(m1_out)
+        .mux_out(m1_out)
     );
 
     multiplexer #(.WIDTH(WIDTH)) M2
     (
-        .in0(11'b1), // F(1) = 1
-        .in1(sum),
+        .in_0(11'b1), // F(1) = 1
+        .in_1(sum),
         .sel(m2_sel),
-        .out(m2_out)
+        .mux_out(m2_out)
     );
 
     // Register Logic
