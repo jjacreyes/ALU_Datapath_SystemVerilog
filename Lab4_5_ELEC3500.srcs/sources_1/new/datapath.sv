@@ -32,12 +32,13 @@ module datapath #(parameter WIDTH = 11)
     logic [WIDTH-1:0] m1_out, m2_out;
     logic [WIDTH-1:0] r1, r2, r3;
     logic [WIDTH-1:0] sum;
+    logic overflow;
 
 
     // Multiplexers
     multiplexer #(.WIDTH(WIDTH)) M1 
     (
-        .in0({WIDTH{1'b0}}),
+        .in0(11'b0), // F(0) = 0
         .in1(r2),
         .sel(m1_sel),
         .out(m1_out)
@@ -45,7 +46,7 @@ module datapath #(parameter WIDTH = 11)
 
     multiplexer #(.WIDTH(WIDTH)) M2
     (
-        .in0({WIDTH{1'b1}}),
+        .in0(11'b1), // F(1) = 1
         .in1(sum),
         .sel(m2_sel),
         .out(m2_out)
@@ -66,7 +67,7 @@ module datapath #(parameter WIDTH = 11)
         if (rst) begin
             r2 <= {WIDTH{1'b0}};
         end
-        else if (r1_load) begin
+        else if (r2_load) begin
             r2 <= m2_out; 
         end
     end
@@ -75,8 +76,8 @@ module datapath #(parameter WIDTH = 11)
 
     adder #(.WIDTH(WIDTH)) adder
     (
-        .r1(A),
-        .r2(B),
+        .A(r1),
+        .B(r2),
         .sum(sum),
         .overflow(overflow)
     );
@@ -96,8 +97,8 @@ module datapath #(parameter WIDTH = 11)
     // Comparator
     comparator #(.WIDTH(WIDTH)) comp
     (
-        .sum(comp_in),
-        .gt(is_greater)
+        .comp_in(sum),
+        .is_greater(gt)
     );
 
     // Outputs: fib_out, gt
