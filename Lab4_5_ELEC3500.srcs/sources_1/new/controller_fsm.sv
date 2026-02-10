@@ -49,7 +49,7 @@ module controller_fsm(
     
     // Reset Logic
     always_ff @ (posedge clk or posedge rst) begin
-        if (!rst) begin
+        if (rst) begin
             current_state <= S_INIT; // Default state
         end
         else begin
@@ -78,7 +78,6 @@ module controller_fsm(
             end
             S_DONE:begin
                 if (rst) next_state = S_INIT;
-                else next_state = S_WAIT;
                 end
             default: next_state = S_WAIT;
             endcase     

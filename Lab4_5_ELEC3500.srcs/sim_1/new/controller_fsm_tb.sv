@@ -47,22 +47,31 @@ module controller_fsm_tb();
     
     always #10 clk = ~clk;
     
-    initial begin
-        clk = 0;
-        rst = 1;
-        step = 0;
-        mode = 0;
-        greater_than = 0;
-        
-        #10;
-        rst = 0; // S_INIT -> r1_ld, r2_ld = 1
-        #10; // S_WAIT, step = 0 cond'n
-        step = 1; // S_WAIT -> S_CHECK -> r1_ld, r2_ld = 0
-        #10; // S_CHECK -> S_ADD -> r3_ld = 1 -> S_UPDATE -> r3_ld = 0 -> S_MODE_CHECK
-        step = 1; // S_MODE_CHECK -> S_CHECK
-        #10; // Check if GT = 1;
-        greater_than = 1; // S_CHECK -> S_DONE
-    end
+initial begin
+    // Initialize
+    clk = 0; rst = 1; step = 0; mode = 0; greater_than = 0;
+    
+    #20 rst = 0; // S_INIT : r1_ld, r2_ld = 1 -> S_WAIT : 20ns
+    
+    #20 step = 1;   // S_WAIT -> S_CHECK : 40ns
+    #20 step = 0;  // : 60ns
+    
+    // 80ns S_CHECK -> 
+    // 100ns S_ADD : m1_sel ,m2_sel, r1_ld, r2_ld = 0, r3_ld = 1 -> 
+    // 120ns S_UPDATE : m1_sel, m2_sel, r1_ld, r2_ld = 1, r3_ld = 0 -> 
+    // 140ns S_MODE_CHECK (4 Clock Cycles) -> all output = 0
+    #80; // : 140ns
+    
+    // S_MODE_CHECK, mode = 0: -> S_WAIT
+    #20; // : 160ns
+    
+    // S_WAIT
+    step = 1; // S_WAIT -> S_CHECK, all output = 0
+    #20 step = 0; // :180 ns 
+    greater_than = 1; // S_CHECK -> S_DONE, all output = 0
+    
+    #40 $finish; // : 220ns
+end
     
     
 

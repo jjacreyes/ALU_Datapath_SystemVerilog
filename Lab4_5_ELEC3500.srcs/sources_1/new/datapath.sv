@@ -102,11 +102,4 @@ module datapath #(parameter WIDTH = 11)
 
     // Outputs: fib_out, gt
     
-
-
-
-
-
-
-
 endmodule
